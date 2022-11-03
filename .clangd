@@ -1,0 +1,22 @@
+CompileFlags:                     # Tweak the parse settings
+  Add: 
+  [
+    -fms-compatibility,
+    -fms-extensions,
+    '-D__INTEL_LLVM_COMPILER',
+    '-D__INTEL_CLANG_COMPILER',
+    '-D__PURE_INTEL_C99_HEADERS__',
+    '-IN:/Library/llvm-project/llvm/build1/release/include/c++/v1',
+    '-IN:/Library/llvm-project/llvm/build1/release/include/x86_64-pc-windows-msvc/c++/v1',
+    '-ID:/Software/IDE/Library/Intel/oneAPI/compiler/latest/windows/compiler/include',
+    '-IN:\Library\boost\build\install_avx2\include\boost-1_81', 
+    '-IN:\Library\opencv\build1\install_avx2\include', 
+    '-std:c++latest',
+    '-Zc:__cplusplus',
+    '-IN:/Library/libigl/include',
+    '-Wall', 
+    '-Wextra',
+    '-Wno-c++98-compat',
+  ]
+  Remove: [-Q*, -fuse-complex-intrinsics, -W*, -w, /W*, /w]
+  Compiler: "N:\\Library\\llvm-project\\llvm\\build1\\release\\clang-cl.exe"

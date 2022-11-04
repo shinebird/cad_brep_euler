@@ -1,4 +1,4 @@
-#include "render/structures.hpp"
+#include <render/structures.hpp>
 #include <b-rep.hpp>
 
 #include <format>
@@ -17,7 +17,7 @@ namespace brep
         // 记录初始点的几何信息
         vertex_ptr->point = point;
 
-        // // 构建拓扑关系
+        // 构建拓扑关系
         new_solid->sface = new_face;
         new_face->fsolid = new_solid;
         new_face->floops = new_loop;
@@ -122,23 +122,10 @@ namespace brep
         {
             tmp_he = tmp_he->next;
         }
-        // bool HaveRoll = false;
         if (tmp_he != tmp_he2)
         {
-            // HaveRoll = true;
             tmp_he2 = tmp_he;
         }
-
-        // for (tmphe2 = lp->ledge; tmphe2->endv != v2; tmphe2 = tmphe2->next);
-
-        //  he1->next = tmphe2->next;
-        //  he1->prev = tmphe1;
-        //  he2->next = tmphe1->next;
-        //  he2->prev = tmphe2;
-        //  tmphe1->next->prev = he2;
-        //  tmphe1->next = he1;
-        //  tmphe2->next->prev = he1;
-        //  tmphe2->next = he2;
 
         he1->next = tmp_he2;
         he1->prev = tmp_he1->prev;
@@ -151,8 +138,6 @@ namespace brep
         tmp_he2->prev->next = he2;
         tmp_he2->prev = he1;
 
-        // loop have problem
-        ////////////////////////////////////
         // Inner loop
         loop->ledge = he1;
         // Recur loop

@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 3.13)
 project ("CAD-Homework1" LANGUAGES CXX)
 
 if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
-    message(WARNING "This project only tested Windows for now")
+    message(WARNING "This project only tested on Windows for now")
 endif()
 if(NOT MSVC)
     message(WARNING "This project only tested on native Windows MSVC-like compilers for now")
